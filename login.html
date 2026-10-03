@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Next Vork - Login / Register</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <!-- Logo -->
+        <div class="logo-section">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Next Vork Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Login Card -->
+        <div class="login-card">
+
+            <!-- Tabs -->
+            <div class="tabs">
+
+                <button
+                    type="button"
+                    class="tab active"
+                    id="loginTab"
+                    onclick="showLogin()"
+                >
+                    Login
+                </button>
+
+                <button
+                    type="button"
+                    class="tab"
+                    id="registerTab"
+                    onclick="showRegister()"
+                >
+                    Register
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 LOGIN SECTION
+            ========================== -->
+
+            <section id="loginSection" class="form-section">
+
+                <div class="heading">
+                    <h1>Welcome Back</h1>
+                    <p>Login using your registered mobile number</p>
+                </div>
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+
+                        <label for="loginMobile">
+                            Mobile Number
+                        </label>
+
+                        <div class="mobile-input">
+
+                            <span class="country-code">+91</span>
+
+                            <input
+                                type="tel"
+                                id="loginMobile"
+                                maxlength="10"
+                                placeholder="Enter mobile number"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Continue
+                    </button>
+
+                </form>
+
+
+                <!-- Login Message -->
+                <div
+                    id="loginMessage"
+                    class="message"
+                ></div>
+
+
+                <!-- Go to Register -->
+                <div class="switch-text">
+
+                    New to Next Vork?
+
+                    <button
+                        type="button"
+                        onclick="showRegister()"
+                    >
+                        Create Account
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 REGISTER SECTION
+            ========================== -->
+
+            <section
+                id="registerSection"
+                class="form-section hidden"
+            >
+
+                <div class="heading">
+                    <h1>Create Account</h1>
+                    <p>Register to book construction services</p>
+                </div>
+
+
+                <!-- Registration Form -->
+                <form id="registerForm">
+
+                    <div class="form-group">
+
+                        <label for="registerName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="registerName"
+                            placeholder="Enter your name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="registerMobile">
+                            Mobile Number
+                        </label>
+
+                        <div class="mobile-input">
+
+                            <span class="country-code">+91</span>
+
+                            <input
+                                type="tel"
+                                id="registerMobile"
+                                maxlength="10"
+                                placeholder="Enter mobile number"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Send OTP
+                    </button>
+
+                </form>
+
+
+                <!-- Register Message -->
+                <div
+                    id="registerMessage"
+                    class="message"
+                ></div>
+
+
+                <!-- =========================
+                     OTP SECTION
+                ========================== -->
+
+                <div
+                    id="otpSection"
+                    class="otp-section hidden"
+                >
+
+                    <div class="otp-heading">
+
+                        <h2>Verify Mobile Number</h2>
+
+                        <p>
+                            Enter the 6-digit OTP sent to your mobile number.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Demo OTP -->
+                    <div
+                        id="demoOtpBox"
+                        class="demo-otp"
+                    >
+                        Demo OTP:
+                        <strong id="demoOtp">123456</strong>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="otpInput">
+                            Enter OTP
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="otpInput"
+                            maxlength="6"
+                            placeholder="Enter 6-digit OTP"
+                            inputmode="numeric"
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        id="verifyOtpBtn"
+                    >
+                        Verify OTP
+                    </button>
+
+
+                    <div
+                        id="otpMessage"
+                        class="message"
+                    ></div>
+
+
+                    <!-- Resend -->
+                    <div class="resend-section">
+
+                        <span id="resendText">
+                            Didn't receive OTP?
+                        </span>
+
+                        <button
+                            type="button"
+                            id="resendOtpBtn"
+                            class="text-btn"
+                        >
+                            Resend OTP
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- Back Home -->
+        <a
+            href="index.html"
+            class="back-home"
+        >
+            ← Back to Home
+        </a>
+
+
+        <!-- Development Note -->
+        <p class="dev-note">
+            Demo authentication for development
+        </p>
+
+    </main>
+
+
+    <!-- Login JS -->
+    <script src="js/login.js"></script>
+
+</body>
+</html>
